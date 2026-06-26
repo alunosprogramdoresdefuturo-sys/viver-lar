@@ -1,0 +1,133 @@
+/* ======== ESTILO GERAL ======== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* ======== CABEÇALHO ======== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e8f5e9;
+  padding: 15px 40px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #2e7d32;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #2e7d32;
+}
+
+nav a.active {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+/* ======== SEÇÃO SOBRE ======== */
+.sobre {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.sobre h1 {
+  font-size: 2em;
+  color: #2e7d32;
+  margin-bottom: 40px;
+}
+
+.conteudo-sobre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.conteudo-sobre .texto {
+  max-width: 500px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.conteudo-sobre img {
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ======== SEÇÃO PILARES ======== */
+.pilares {
+  background-color: #fff;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.pilares h2 {
+  font-size: 1.8em;
+  color: #2e7d32;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  background-color: #e8f5e9;
+  border-radius: 10px;
+  padding: 25px;
+  width: 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card span {
+  font-size: 2em;
+}
+
+.card h3 {
+  color: #2e7d32;
+  margin: 15px 0 10px;
+}
+
+.card p {
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+  .conteudo-sobre {
+    flex-direction: column;
+  }
+
+  .conteudo-sobre img {
+    width: 100%;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
