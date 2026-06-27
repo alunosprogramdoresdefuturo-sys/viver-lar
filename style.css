@@ -1,0 +1,989 @@
+/* =====================================================
+   VIVALEVE - STYLE.CSS
+   Desenvolvido para o Projeto VivaLeve
+====================================================== */
+
+/* =====================
+   IMPORTAÇÃO DAS FONTES
+====================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* =====================
+   VARIÁVEIS
+====================== */
+
+:root{
+
+    --verde-escuro:#2D5A27;
+    --verde-claro:#7FA06B;
+    --bege:#F4EAE1;
+    --laranja:#E5914F;
+    --azul:#23343A;
+
+    --cinza:#666;
+    --cinza-claro:#F8F8F8;
+
+    --branco:#FFFFFF;
+
+    --sombra:0 8px 20px rgba(0,0,0,.08);
+
+    --radius:12px;
+
+}
+
+/* =====================
+   RESET
+====================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+    background:var(--cinza-claro);
+    color:var(--azul);
+    line-height:1.7;
+
+}
+
+/* =====================
+   TÍTULOS
+====================== */
+
+h1,
+h2,
+h3,
+h4{
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+/* =====================
+   CONTAINER
+====================== */
+
+.container{
+
+    width:90%;
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:80px 0;
+
+}
+
+/* =====================
+   HEADER
+====================== */
+
+header{
+
+    background:var(--branco);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 8%;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+
+}
+
+/* =====================
+   LOGO
+====================== */
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:var(--verde-escuro);
+
+    transition:.3s;
+
+}
+
+.logo:hover{
+
+    color:var(--laranja);
+
+}
+
+/* =====================
+   MENU
+====================== */
+
+nav{
+
+    display:flex;
+    gap:35px;
+
+}
+
+nav a{
+
+    color:var(--azul);
+
+    font-weight:500;
+
+    position:relative;
+
+    transition:.3s;
+
+}
+
+/* Linha animada */
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--verde-escuro);
+
+    left:0;
+
+    bottom:-6px;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:var(--verde-escuro);
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+.active{
+
+    color:var(--verde-escuro);
+
+}
+
+/* =====================
+   HERO
+====================== */
+
+.hero{
+
+    min-height:90vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+    color:white;
+
+    background:
+
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+
+    url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.hero h1{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+    animation:subir 1s;
+
+}
+
+.hero p{
+
+    max-width:700px;
+
+    font-size:20px;
+
+    margin-bottom:35px;
+
+    animation:subir 1.5s;
+
+}
+
+/* =====================
+   BOTÕES
+====================== */
+
+.btn{
+
+    display:inline-block;
+
+    background:var(--laranja);
+
+    color:white;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.4s;
+
+    box-shadow:var(--sombra);
+
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    background:#d67e38;
+
+}
+
+.btn-verde{
+
+    background:var(--verde-claro);
+
+}
+
+.btn-verde:hover{
+
+    background:var(--verde-escuro);
+
+}
+
+/* =====================
+   TÍTULOS DAS SEÇÕES
+====================== */
+
+.section-title{
+
+    text-align:center;
+
+    color:var(--verde-escuro);
+
+    font-size:40px;
+
+    margin-bottom:60px;
+
+}
+
+/* =====================
+   ANIMAÇÃO
+====================== */
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* =====================================================
+   CARDS
+====================================================== */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+}
+
+.card{
+
+    background:var(--branco);
+
+    border-radius:var(--radius);
+
+    overflow:hidden;
+
+    box-shadow:var(--sombra);
+
+    transition:.4s;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    transition:.5s;
+
+}
+
+.card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.card h3{
+
+    color:var(--verde-escuro);
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+}
+
+.card p{
+
+    color:var(--cinza);
+
+    font-size:16px;
+
+}
+
+/* =====================================================
+   FAIXA DE FRASE
+====================================================== */
+
+.faixa-frase{
+
+    background:var(--bege);
+
+    text-align:center;
+
+    padding:70px 20px;
+
+}
+
+.faixa-frase p{
+
+    max-width:900px;
+
+    margin:auto;
+
+    font-size:26px;
+
+    font-style:italic;
+
+    color:var(--verde-escuro);
+
+    font-weight:500;
+
+}
+
+/* =====================================================
+   FAIXA CHAMADA
+====================================================== */
+
+.faixa-chamada{
+
+    background:var(--verde-escuro);
+
+    color:var(--branco);
+
+    text-align:center;
+
+    padding:70px 20px;
+
+}
+
+.faixa-chamada h2{
+
+    font-size:36px;
+
+}
+
+/* =====================================================
+   PÁGINA SOBRE
+====================================================== */
+
+.sobre-layout{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:60px;
+
+    margin-bottom:80px;
+
+}
+
+.sobre-texto{
+
+    flex:1;
+
+}
+
+.sobre-texto h1{
+
+    color:var(--verde-escuro);
+
+    font-size:45px;
+
+    margin-bottom:25px;
+
+}
+
+.sobre-texto p{
+
+    margin-bottom:20px;
+
+    color:var(--cinza);
+
+    font-size:18px;
+
+}
+
+.sobre-img{
+
+    flex:1;
+
+    width:100%;
+
+    height:450px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    box-shadow:var(--sombra);
+
+}
+
+/* =====================================================
+   FILTROS
+====================================================== */
+
+.filtros{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:50px;
+
+}
+
+.btn-filtro{
+
+    background:var(--branco);
+
+    border:2px solid var(--verde-claro);
+
+    padding:12px 25px;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.btn-filtro:hover{
+
+    background:var(--verde-claro);
+
+    color:white;
+
+}
+
+.btn-filtro.active{
+
+    background:var(--verde-escuro);
+
+    color:white;
+
+    border-color:var(--verde-escuro);
+
+}
+
+/* =====================================================
+   BLOG
+====================================================== */
+
+.card-blog{
+
+    text-align:left;
+
+}
+
+.card-blog h3{
+
+    margin:15px 0;
+
+}
+
+.card-blog p{
+
+    margin-bottom:20px;
+
+}
+
+.card-blog a{
+
+    color:var(--laranja);
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.card-blog a:hover{
+
+    color:var(--verde-escuro);
+
+}
+
+/* =====================================================
+   ANIMAÇÃO DOS CARDS
+====================================================== */
+
+.card{
+
+    animation:fadeUp .8s;
+
+}
+
+@keyframes fadeUp{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* =====================================================
+   CONTATO
+====================================================== */
+
+.contato-layout{
+
+    display:flex;
+
+    gap:50px;
+
+    align-items:flex-start;
+
+}
+
+.contato-info{
+
+    flex:1;
+
+}
+
+.contato-info h2{
+
+    color:var(--verde-escuro);
+
+    font-size:32px;
+
+    margin-bottom:20px;
+
+}
+
+.contato-info p{
+
+    color:var(--cinza);
+
+    margin-bottom:15px;
+
+    font-size:17px;
+
+}
+
+.contato-form{
+
+    flex:1;
+
+    background:var(--branco);
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:var(--sombra);
+
+}
+
+/* =====================
+   FORMULÁRIO
+====================== */
+
+.form-group{
+
+    margin-bottom:25px;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:var(--verde-escuro);
+
+}
+
+.form-group input,
+.form-group textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    font-family:'Inter',sans-serif;
+
+    transition:.3s;
+
+}
+
+.form-group textarea{
+
+    resize:none;
+
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+
+    outline:none;
+
+    border-color:var(--verde-escuro);
+
+    box-shadow:0 0 10px rgba(45,90,39,.2);
+
+}
+
+.btn-full{
+
+    width:100%;
+
+    border:none;
+
+    cursor:pointer;
+
+}
+
+/* =====================================================
+   FOOTER
+====================================================== */
+
+footer{
+
+    background:var(--azul);
+
+    color:white;
+
+    margin-top:80px;
+
+    padding:60px 8% 30px;
+
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:40px;
+
+    margin-bottom:40px;
+
+}
+
+.footer-col h4{
+
+    margin-bottom:20px;
+
+    color:var(--laranja);
+
+    font-size:22px;
+
+}
+
+.footer-col p{
+
+    color:#ddd;
+
+}
+
+.footer-col ul li{
+
+    margin-bottom:12px;
+
+}
+
+.footer-col a{
+
+    color:#ddd;
+
+    transition:.3s;
+
+}
+
+.footer-col a:hover{
+
+    color:white;
+
+    padding-left:8px;
+
+}
+
+.footer-copy{
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    padding-top:20px;
+
+    text-align:center;
+
+    color:#bbb;
+
+}
+
+/* =====================================================
+   RESPONSIVIDADE
+====================================================== */
+
+@media(max-width:992px){
+
+    .hero h1{
+
+        font-size:48px;
+
+    }
+
+    .hero p{
+
+        font-size:18px;
+
+    }
+
+    .sobre-layout{
+
+        flex-direction:column;
+
+    }
+
+    .contato-layout{
+
+        flex-direction:column;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    header{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        padding:20px;
+
+    }
+
+    nav{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:20px;
+
+    }
+
+    .hero{
+
+        min-height:70vh;
+
+    }
+
+    .hero h1{
+
+        font-size:38px;
+
+    }
+
+    .hero p{
+
+        font-size:17px;
+
+    }
+
+    .section-title{
+
+        font-size:32px;
+
+    }
+
+    .faixa-frase p{
+
+        font-size:20px;
+
+    }
+
+    .faixa-chamada h2{
+
+        font-size:28px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+
+        font-size:30px;
+
+    }
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+    .btn{
+
+        padding:13px 28px;
+
+    }
+
+    .container{
+
+        width:95%;
+
+    }
+
+}
